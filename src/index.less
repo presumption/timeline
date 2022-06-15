@@ -1,0 +1,78 @@
+@import "defaults";
+
+.timeline {
+  @trunk-color: #a98eec;
+  @event-color: #ffcfbe;
+
+  overflow-y: auto;
+  height: 100%;
+
+  .events {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 20px 0 20px 0;
+  }
+
+  .row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    width: calc(50% + @point-size);
+    left: calc(50% - @point-size);
+    position: relative;
+
+    @point-size: 12px;
+    @stem-thickness: 5px;
+
+    .trunk {
+      @trunk-thickness: (@point-size/2);
+      background-color: @trunk-color;
+      height: 100%;
+      width: @trunk-thickness;
+      position: absolute;
+      left: ((@point-size - @trunk-thickness)/2);
+    }
+
+    .connection {
+      background-color: @event-color;
+      width: @point-size;
+      height: @point-size;
+      border-radius: (@point-size/2);
+      position: absolute;
+      flex: 0 0 auto;
+    }
+
+    .stem {
+      background-color: @event-color;
+      height: @stem-thickness;
+      width: 50px;
+      margin-left: (@point-size/2);
+      flex: 0 0 auto;
+    }
+
+    .event {
+      background-color: @event-color;
+      border-radius: (@point-size/2);
+      max-width: 80%;
+      margin: 10px 0 10px 0;
+      padding: 10px 20px;
+
+      .title {
+        margin: 0;
+      }
+
+      .subtitle {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .terminator {
+    .row();
+
+    .connection {
+      background-color: @trunk-color;
+    }
+  }
+}

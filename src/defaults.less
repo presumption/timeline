@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @default-rem-modifier: 1.6;
+  font-size: (100% / @default-rem-modifier);
+}
+
+body {
+  overflow: hidden;
+
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.6rem;
+  font-family: 'Fira Sans', Avenir, Tahoma, sans-serif;
+}
+
+input {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+a {
+  color: inherit;
+}

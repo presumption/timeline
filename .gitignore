@@ -1,0 +1,9 @@
+elm-stuff
+repl-temp-*
+.parcel-cache
+dist
+node_modules
+
+*.iml
+*.ipr
+*.iws
